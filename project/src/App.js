@@ -1,26 +1,57 @@
 import React from 'react';
 import './App.css';
 
+import { Route, NavLink } from "react-router-dom";
+import styled from "styled-components";
+
 import Container from "./components/Container.js";
 import Home from "./components/Home.js";
-import { Route, NavLink } from "react-router-dom";
+
+const Wrapper = styled.div`
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  background-color: skyblue;
+`;
+
+const Header = styled.div`
+  margin: auto 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+
+`;
+
+const Pages = styled(NavLink)`
+  text-decoration: none;
+  padding-left: 5%;
+  padding-right: 5%;
+  color: rgba(0, 0, 0, 1);
+  &:hover {
+    color: rgba(127, 255, 0, 1);
+    text-shadow: 10px 10px rgba(0,0,0,1);
+  }
+`;
+
+
+
+
 
 function App() {
   return (
-    <div className="App">
+    <Wrapper>
+      <Header>
+        <Pages to="/home" >Home Page</Pages>
+        <Pages to="/characters">Characters Page</Pages>
+      </Header>
+      
       <Route exact path="/home">
         <Home />
       </Route>
       <Route exact path="/characters">
         <Container /> 
       </Route>
-
-      <NavLink to="/home">Home Page</NavLink>
-      <NavLink to="/characters">Characters Page</NavLink>
-
-      {/* <Home />
-      <Container /> */}
-    </div>
+    </Wrapper>
   );
 }
 

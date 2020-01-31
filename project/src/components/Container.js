@@ -2,10 +2,30 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 import Card from "./Card.js";
-// import SearchForm from "./SearchForm.js";
+import styled from "styled-components";
 
 import axios from "axios";
 
+const Wrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap; 
+`;
+
+const Form = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+const Label = styled.label`
+    font-size: 3rem;
+`;
+
+const Input = styled.input`
+    font-size: 2rem;
+    padding-left: 1rem;
+    box-shadow: -4px 0 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(127, 255, 0, 0.4);
+`;
 
 const Container = () => {
     const [ characters, setCharacters ] = useState([])
@@ -37,25 +57,25 @@ const Container = () => {
 
     return (
         <div>
-            <NavLink to="/home">Home Page</NavLink>
-            <h1> This is the container! </h1>
-            <div>
+            <Form>
                 <form onSubmit={handleSubmit}>
-                    <label>
-                        Search for your character here:
-                        <input 
+                    <Label>
+                        Search the characters here:
+                        <Input 
                             type="text"
                             placeholder="Walter White 🔍"
                             name="character"
                             value={search}
                             onChange={handleChange}
                         />
-                    </label>
+                    </Label>
                 </form>
-            </div>
+            </Form>
+            <Wrapper>
             {characters.map(char => {
                 return <Card character={char}/>
             })}
+            </Wrapper>
         </div>
     )
 }
