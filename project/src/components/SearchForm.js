@@ -1,10 +1,20 @@
 import React from "react";
 
-const SearchForm = () => {
+const SearchForm = (props) => {
 
     return (
         <div>
-            <h1> This is the SearchForm! </h1>
+            <form>
+                <label>
+                    Search for your character here:
+                    <input 
+                        type="text"
+                        placeholder="Walter White 🔍"
+                        name="character"
+                        value={props}
+                    />
+                </label>
+            </form>
         </div>
     )
 }
