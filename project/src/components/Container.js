@@ -16,9 +16,10 @@ const Container = () => {
         axios.get(`https://www.breakingbadapi.com/api/characters`)
             .then(res => {
                 console.log(res);
-                const breaking = res.data.filter(name => 
-                    name.name.toLowerCase().includes(search.toLowerCase())
-                );
+                const breaking = res.data.filter((name) => {
+                    return (
+                        name.name.toLowerCase().includes(search.toLowerCase()) || name.nickname.toLowerCase().includes(search.toLowerCase()) || name.status.toLowerCase().includes(search.toLowerCase())
+                )});
                 setCharacters(breaking);
             })
             .catch(err => {

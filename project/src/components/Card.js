@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 const Card = ({ character }) => {
     console.log(`props from the card`, character);
 
