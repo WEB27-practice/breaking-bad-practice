@@ -9,6 +9,8 @@ import axios from "axios";
 const Wrapper = styled.div`
     display: flex;
     flex-wrap: wrap; 
+    justify-content: flex-start;
+    height: 450vh;
 `;
 
 const Form = styled.div`
@@ -24,7 +26,7 @@ const Label = styled.label`
 const Input = styled.input`
     font-size: 2rem;
     padding-left: 1rem;
-    box-shadow: -4px 0 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(127, 255, 0, 0.4);
+    box-shadow: -4px 0 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(254, 219, 113, 0.8);
 `;
 
 const Container = () => {

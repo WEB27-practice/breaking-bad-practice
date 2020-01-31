@@ -28,7 +28,7 @@ const Pages = styled(NavLink)`
   padding-right: 5%;
   color: rgba(0, 0, 0, 1);
   &:hover {
-    color: rgba(127, 255, 0, 1);
+    color: rgba(254, 219, 113, 0.8);
     text-shadow: 10px 10px rgba(0,0,0,1);
   }
 `;

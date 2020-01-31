@@ -3,12 +3,12 @@ import React from "react";
 import styled from "styled-components";
 
 const CharCard = styled.div`
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(127, 255, 0, 0.4);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(254, 219, 113, 0.8);
     width: 200px;
     height: 250px;
     display: flex;
     margin: 1rem;
-    background-color: white;
+    background-color: rgba(254, 219, 113, 1);
 `;
 
 const TextBox = styled.div`
